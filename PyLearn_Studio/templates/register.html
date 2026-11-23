@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Register • PyLearn Studio{% endblock %}
+{% block heading %}Create your learner account{% endblock %}
+{% block content %}
+<div class="auth-wrap">
+  <form class="panel auth-card" method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <span class="pill">NEW LEARNER</span>
+    <h2>Start your Python journey</h2>
+    <label>Name</label><input name="name" required>
+    <label>Email</label><input type="email" name="email" required>
+    <label>Password</label><input type="password" name="password" minlength="8" required>
+    <label>Confirm password</label><input type="password" name="confirm" minlength="8" required>
+    <button class="btn primary full" type="submit">Create Account →</button>
+    <p class="center muted">Already registered? <a href="{{ url_for('login') }}">Login</a></p>
+  </form>
+</div>
+{% endblock %}

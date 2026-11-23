@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Login • PyLearn Studio{% endblock %}
+{% block heading %}Welcome back{% endblock %}
+{% block content %}
+<div class="auth-wrap">
+  <form class="panel auth-card" method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <span class="pill">SECURE LOGIN</span>
+    <h2>Enter the learning studio</h2>
+    <p class="muted">Use your registered account to continue.</p>
+    <label>Email</label><input type="email" name="email" required>
+    <label>Password</label><input type="password" name="password" required>
+    <button class="btn primary full" type="submit">Login →</button>
+    <p class="center muted">New learner? <a href="{{ url_for('register') }}">Create an account</a></p>
+  </form>
+</div>
+{% endblock %}

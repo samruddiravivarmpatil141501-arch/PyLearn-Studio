@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Quiz Result • PyLearn Studio{% endblock %}
+{% block heading %}Quiz Result{% endblock %}
+{% block content %}
+<div class="panel result-card">
+  <div class="result-icon {% if passed %}pass{% else %}fail{% endif %}">{% if passed %}✓{% else %}✗{% endif %}</div>
+  <span class="pill">{% if passed %}MODULE QUIZ PASSED{% else %}NOT PASSED YET{% endif %}</span>
+  <h2>{{ score }} / {{ total }}</h2>
+  <p>{{ module.title }} — you need {{ need }} correct ({{ pass_percent }}%) to pass.
+  {% if not passed %}Review the lessons and try again; the options will appear in a new order.{% endif %}</p>
+  <div class="hero-actions">
+    {% if not passed %}<a class="btn primary" href="{{ url_for('quiz', module_id=module.id) }}">Try Again</a>{% endif %}
+    <a class="btn {% if passed %}primary{% else %}ghost{% endif %}" href="{{ url_for('quizzes') }}">All Module Quizzes</a>
+    <a class="btn ghost" href="{{ url_for('module_view', module_id=module.id) }}">Back to Module</a>
+  </div>
+</div>
+<div class="panel quiz-review">
+  <h2>Answer Review</h2>
+  {% for r in review %}
+  <div class="review-item {% if r.ok %}ok{% else %}wrong{% endif %}">
+    <b>{{ loop.index }}. {{ r.q }}</b>
+    <span>{% if r.ok %}✓ Your answer: {{ r.chosen }}{% else %}✗ Your answer: {{ r.chosen or "not answered" }} &nbsp;•&nbsp; Correct: {{ r.correct }}{% endif %}</span>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

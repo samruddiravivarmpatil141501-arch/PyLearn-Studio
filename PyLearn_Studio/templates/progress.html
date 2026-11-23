@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Progress • PyLearn Studio{% endblock %}
+{% block heading %}Progress & Reports{% endblock %}
+{% block content %}
+<div class="stat-grid">
+  <div class="stat"><span>Overall Progress</span><strong>{{ progress_percent }}%</strong></div>
+  <div class="stat"><span>Topics Completed</span><strong>{{ done|length }}</strong></div>
+  <div class="stat"><span>Saved Programs</span><strong>{{ practice_count }}</strong></div>
+  <div class="stat"><span>Certificate</span><strong>{% if certificate %}Unlocked{% else %}Locked{% endif %}</strong></div>
+</div>
+<div class="panel">
+  <h2>Module Report</h2>
+  {% for m in modules %}
+  {% set completed = m.topics|selectattr("id", "in", done)|list|length %}
+  <div class="report-row"><span><b>0{{m.id}}</b> {{m.title}}</span><span>{{completed}} / {{m.topics|length}}</span><div class="progress-track"><i style="width:{{ (completed/m.topics|length*100)|round }}%"></i></div></div>
+  {% endfor %}
+</div>
+<div class="panel">
+  <h2>Quiz Results</h2>
+  <p class="muted">Best score per module (pass mark {{ pass_percent }}%).</p>
+  <table><tr><th>Module</th><th>Best score</th><th>Attempts</th><th>Status</th></tr>
+  {% for m in modules %}{% set s = qstatus.get(m.id) %}
+  <tr><td><b>0{{ m.id }}</b> {{ m.title }}</td><td>{% if s %}{{ s.best_score }}/{{ s.best_total }}{% else %}—{% endif %}</td><td>{{ s.attempts if s else 0 }}</td>
+  <td>{% if s and s.passed %}<span class="badge-pass">Passed</span>{% elif s %}<span class="badge-fail">Retry</span>{% else %}<span class="muted">Not taken</span>{% endif %}</td></tr>
+  {% endfor %}
+  </table>
+</div>
+<div class="panel">
+  <h2>All Quiz Attempts</h2>
+  {% if quizzes %}
+  <table><tr><th>Module</th><th>Score</th><th>Date</th></tr>
+  {% for q in quizzes %}<tr><td>Module {{ q.module_id }}</td><td>{{ q.score }}/{{ q.total }}</td><td>{{ q.created_at }}</td></tr>{% endfor %}
+  </table>
+  {% else %}<p class="muted">No quiz attempts yet.</p>{% endif %}
+</div>
+{% endblock %}

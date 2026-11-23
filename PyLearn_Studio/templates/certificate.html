@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Certificate • PyLearn Studio{% endblock %}
+{% block heading %}Certificate{% endblock %}
+{% block content %}
+{% if certificate %}
+<div class="certificate">
+  <div class="cert-top">
+    <img class="cert-logo" src="{{ url_for('static', filename='images/marwadi_university_logo.png') }}" alt="Marwadi University">
+    <div class="cert-brand right">PyLearn <span>Studio</span></div>
+  </div>
+  <div class="cert-seal">PY<br><small>LEARN</small></div>
+  <span class="cert-label">CERTIFICATE OF COMPLETION</span>
+  <p>This is to certify that</p>
+  <h2>{{ user["name"]|upper }}</h2>
+  <p>has successfully completed the</p>
+  <h3>PYTHON LEARNING PROGRAM</h3>
+  <p class="cert-text">Interactive Python Learning Platform<br>All {{ modules_total }} modules, all {{ total }} topics and all {{ modules_total }} module quizzes (pass mark {{ pass_percent }}%) completed.</p>
+  <div class="cert-bottom"><div><small>Certificate ID</small><b>{{ certificate["certificate_id"] }}</b></div><div><small>Completion Date</small><b>{{ certificate["issued_at"] }}</b></div><div><small>Modules</small><b>{{ modules_total }} / {{ modules_total }}</b></div></div>
+  <div class="cert-sign">Program Coordinator<br><small>PyLearn Studio</small></div>
+</div>
+<div class="center"><button class="btn primary" onclick="window.print()">🖨 Print Certificate</button></div>
+{% else %}
+<div class="panel locked-card">
+  <div class="lock">🔒</div>
+  <h2>Certificate Locked</h2>
+  <p>To unlock it: complete all {{ total }} topics <b>and</b> pass every module quiz ({{ pass_percent }}% or more).</p>
+  <div class="progress-track"><i style="width:{{ (done/total*100)|round }}%"></i></div>
+  <strong>{{ done }}/{{ total }} topics completed</strong>
+  <div class="cert-req">
+    <b>Module quizzes: {{ quizzes_passed }}/{{ modules_total }} passed</b>
+    {% for r in quiz_rows %}
+    <div class="cert-req-row">
+      <span><b>0{{ r.module.id }}</b> {{ r.module.title }}</span>
+      <span>{% if r.status and r.status.passed %}<span class="badge-pass">Passed {{ r.status.best_score }}/{{ r.status.best_total }}</span>{% elif r.status %}<span class="badge-fail">Best {{ r.status.best_score }}/{{ r.status.best_total }}</span>{% else %}<span class="muted">Not taken</span>{% endif %}</span>
+    </div>
+    {% endfor %}
+    <a class="btn secondary" href="{{ url_for('quizzes') }}">Go to Module Quizzes →</a>
+  </div>
+</div>
+{% endif %}
+{% endblock %}

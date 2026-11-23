@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Quiz • PyLearn Studio{% endblock %}
+{% block heading %}{{ module.title }} Quiz{% endblock %}
+{% block content %}
+<form class="panel quiz-form" method="post" data-quiz-module="{{ module.id }}" id="quizForm" autocomplete="off">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <div class="quiz-head">
+    <span class="pill">MODULE {{ module.id }} QUIZ • {{ questions|length }} QUESTIONS</span>
+    <h2>{{ module.title }} — Quiz</h2>
+    <p class="muted">Answer all {{ questions|length }} questions. You need {{ need }} correct ({{ pass_percent }}%) to pass this module quiz. Answers are saved while you work and the option order changes on every new attempt.</p>
+  </div>
+
+  {% for q in questions %}
+  {% set question_index = loop.index0 %}
+  <div class="question">
+    <h3>{{ loop.index }}. {{ q.q }}</h3>
+    {% for option in q.options %}
+    <label class="option">
+      <input type="radio" name="q{{ question_index }}" value="{{ loop.index0 }}" required>
+      <span>{{ option }}</span>
+    </label>
+    {% endfor %}
+  </div>
+  {% endfor %}
+
+  <button class="btn primary" type="submit">Submit Quiz →</button>
+  <p class="muted quiz-save-status" id="quizSaveStatus" aria-live="polite">Answers are saved automatically on this device.</p>
+</form>
+{% endblock %}

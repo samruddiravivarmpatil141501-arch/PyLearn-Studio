@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+{% block title %}Module {{ module.id }} — {{ module.title }} • PyLearn Studio{% endblock %}
+{% block heading %}Module {{ module.id }} — {{ module.title }}{% endblock %}
+{% block content %}
+<div class="module-lesson-shell">
+  <aside class="module-lesson-sidebar">
+    <div class="module-sidebar-heading">
+      <span class="module-sidebar-icon">▣</span>
+      <div><small>MODULE {{ module.id }}</small><strong>Lessons</strong></div>
+    </div>
+
+    <div class="module-lesson-list">
+      {% for item in module.topics %}
+      <a class="module-lesson-item{% if item.id == topic.id %} active{% endif %}"
+         href="{{ url_for('module_view', module_id=module.id, topic=item.id) }}">
+        <span class="module-lesson-number">{% if item.id in done %}✓{% else %}{{ loop.index }}{% endif %}</span>
+        <span class="module-lesson-name">{{ item.title }}</span>
+        <span class="module-lesson-arrow">›</span>
+      </a>
+      {% endfor %}
+    </div>
+
+    <div class="module-sidebar-progress">
+      <span>MODULE {{ module.id }} PROGRESS</span>
+      <strong>{{ module_done_count }}/{{ total_topics }}</strong>
+      <div class="module-progress-track"><i style="width:{{ (module_done_count / total_topics * 100)|round|int }}%"></i></div>
+    </div>
+  </aside>
+
+  <main class="module-lesson-content">
+    <section class="module-lesson-hero">
+      <div class="module-hero-copy">
+        <div class="module-topic-label">MODULE {{ module.id }} • TOPIC {{ topic_number }}/{{ total_topics }}</div>
+        <h2>{{ topic.title }}</h2>
+        <p>Learn the concept, understand the key ideas, study the examples, watch the lesson, and practise before moving forward.</p>
+      </div>
+      <div class="module-hero-badge"><b>PYTHON</b><small>LESSON</small></div>
+    </section>
+
+    <div class="module-content-grid">
+      <div class="module-content-column">
+        <section class="module-content-card theory-card">
+          <div class="module-card-title blue"><span>▣</span> Detailed Theory</div>
+          <div class="module-card-body">
+            {% for paragraph in topic.matter.split('\n') %}
+              {% if paragraph.strip() %}<p>{{ paragraph }}</p>{% endif %}
+            {% endfor %}
+          </div>
+        </section>
+
+        {% if topic.subconcepts %}
+        <section class="module-content-card key-card">
+          <div class="module-card-title blue"><span>💡</span> Key Points</div>
+          <ul class="module-key-points">
+            {% for name, text in topic.subconcepts %}
+            <li><strong>{{ name }}:</strong> {{ text }}</li>
+            {% endfor %}
+          </ul>
+        </section>
+        {% endif %}
+
+        {% if topic.example %}
+        <section class="module-content-card example-card">
+          <div class="module-card-title purple"><span>▤</span> Example</div>
+          <div class="module-example">
+            <strong>{{ topic.example[0] }}</strong>
+            <pre><code>{{ topic.example[1] }}</code></pre>
+            {% if topic.example[2] %}<div class="module-output"><span>OUTPUT</span><pre>{{ topic.example[2] }}</pre></div>{% endif %}
+            {% if topic.run_note %}<p class="example-note">ℹ {{ topic.run_note }}</p>
+            {% else %}<a class="example-run" href="{{ url_for('practice', topic_id=topic.id, example=1) }}">▶ Run this example in the Practice Lab</a>{% endif %}
+          </div>
+        </section>
+        {% endif %}
+      </div>
+
+      <div class="module-content-column">
+        {% if topic.syntax %}
+        <section class="module-content-card syntax-card-new">
+          <div class="module-card-title purple"><span>&lt;/&gt;</span> Syntax</div>
+          <pre><code>{{ topic.syntax }}</code></pre>
+        </section>
+        {% endif %}
+
+        <section class="module-content-card video-embed-card">
+          <div class="module-card-title purple"><span>▶</span> Video Lesson</div>
+          <div class="module-video-frame">
+            <iframe
+              src="{{ video.embed }}"
+              title="{{ topic.title }} video lesson"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+          <div class="module-video-footer">
+            <div><strong>{{ video.title }}: {{ module.title }}</strong><small>Embedded YouTube lesson for this whole module</small></div>
+            <a href="{{ video.watch }}" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a>
+          </div>
+          <div class="module-video-footer"><div><small>Want a lesson on just “{{ topic.title }}”?</small></div><a href="{{ topic.video_search_url }}" target="_blank" rel="noopener noreferrer">Search YouTube ↗</a></div>
+        </section>
+
+        <section class="module-content-card practice-card-new">
+          <div class="module-card-title blue"><span>⚗</span> Practice</div>
+          <div class="module-practice-body">
+            <p>{{ topic.practice }}</p>
+            <a class="module-practice-button" href="{{ url_for('practice', topic_id=topic.id) }}">Open Practice Lab →</a>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="module-lesson-actions">
+      <form method="post" action="{{ url_for('complete_topic', topic_id=topic.id) }}">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <button class="module-complete-button" type="submit">{% if topic.id in done %}✓ Topic Completed{% else %}✓ Mark as Complete{% endif %}</button>
+      </form>
+      <div class="module-topic-nav">
+        {% if previous_topic %}<a href="{{ url_for('module_view', module_id=module.id, topic=previous_topic.id) }}">← Previous</a>{% endif %}
+        {% if next_topic %}<a class="next" href="{{ url_for('module_view', module_id=module.id, topic=next_topic.id) }}">Next Lesson →</a>{% else %}<a class="next" href="{{ url_for('quiz', module_id=module.id) }}">Take Module Quiz →</a>{% endif %}
+      </div>
+    </div>
+
+    <div class="module-bottom-nav">
+      {% if previous_module %}<a href="{{ url_for('module_view', module_id=previous_module.id) }}">← Module {{ previous_module.id }}</a>{% else %}<span>First Module</span>{% endif %}
+      <span>MODULE {{ module_number }} / {{ total_modules }}</span>
+      {% if next_module %}<a href="{{ url_for('module_view', module_id=next_module.id) }}">Module {{ next_module.id }} →</a>{% else %}<a href="{{ url_for('modules') }}">All Modules →</a>{% endif %}
+    </div>
+  </main>
+</div>
+{% endblock %}

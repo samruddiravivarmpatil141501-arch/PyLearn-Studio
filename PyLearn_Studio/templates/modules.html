@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Modules • PyLearn Studio{% endblock %}
+{% block heading %}Learning Modules{% endblock %}
+{% block content %}
+<div class="module-grid large">
+{% for m in modules %}
+<a class="module-card" href="{{ url_for('module_view', module_id=m.id) }}">
+  <div class="module-number">0{{ m.id }}</div>
+  <span class="status">{{ m.completed }}/{{ m.topics|length }} complete</span>
+  <h2>{{ m.title }}</h2><p>{{ m.description }}</p>
+  <div class="progress-track"><i style="width:{{ (m.completed/m.topics|length*100)|round }}%"></i></div>
+  <span class="link-arrow">Open module →</span>
+</a>
+{% endfor %}
+</div>
+{% endblock %}

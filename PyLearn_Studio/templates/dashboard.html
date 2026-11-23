@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Dashboard • PyLearn Studio{% endblock %}
+{% block heading %}Dashboard{% endblock %}
+{% block content %}
+<section class="welcome">
+  <div><span class="pill">LEARNER DASHBOARD</span><h2>Good to see you, {{ current_user["name"] }} 👋</h2><p class="muted">Continue from where you stopped and turn concepts into code.</p></div>
+  <a class="btn primary" href="{{ url_for('modules') }}">Continue Learning →</a>
+</section>
+<div class="stat-grid">
+  <div class="stat"><span>Course Progress</span><strong>{{ progress_percent }}%</strong></div>
+  <div class="stat"><span>Quiz Average</span><strong>{{ quiz_avg }}%</strong></div>
+  <div class="stat"><span>Saved Programs</span><strong>{{ practice_count }}</strong></div>
+  <div class="stat"><span>Modules</span><strong>7</strong></div>
+</div>
+<h2 class="section-title">Learning Path</h2>
+<div class="module-grid">
+{% for m in modules %}
+<a class="module-card" href="{{ url_for('module_view', module_id=m.id) }}">
+  <div class="module-number">0{{ m.id }}</div>
+  <div><span class="status">{{ m.completed }}/{{ m.total }} topics</span><h3>{{ m.title }}</h3><p>{{ m.description }}</p></div>
+  <div class="progress-track"><i style="width:{{ (m.completed/m.total*100)|round }}%"></i></div>
+</a>
+{% endfor %}
+</div>
+{% endblock %}

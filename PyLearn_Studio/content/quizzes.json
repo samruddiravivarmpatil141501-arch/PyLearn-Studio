@@ -1,0 +1,457 @@
+{
+ "1": [
+  {
+   "q": "Which function displays text or other values on the screen in Python?",
+   "options": [
+    "print()",
+    "input()",
+    "type()",
+    "len()"
+   ]
+  },
+  {
+   "q": "Which statement correctly creates a variable named age with the value 20?",
+   "options": [
+    "age = 20",
+    "20 = age",
+    "var age == 20",
+    "age :=: 20"
+   ]
+  },
+  {
+   "q": "Which Python data type is used for True and False values?",
+   "options": [
+    "bool",
+    "str",
+    "float",
+    "list"
+   ]
+  },
+  {
+   "q": "What does int(\"25\") produce?",
+   "options": [
+    "The integer 25",
+    "The string 25",
+    "The float 25.0",
+    "The Boolean True"
+   ]
+  },
+  {
+   "q": "What is the result of 10 // 3 in Python?",
+   "options": [
+    "3",
+    "3.33",
+    "1",
+    "30"
+   ]
+  },
+  {
+   "q": "Which operator checks whether two values are equal?",
+   "options": [
+    "==",
+    "=",
+    "!=",
+    "is not"
+   ]
+  },
+  {
+   "q": "What is the output of print(type(3.14))?",
+   "options": [
+    "<class 'float'>",
+    "<class 'int'>",
+    "<class 'str'>",
+    "<class 'decimal'>"
+   ]
+  }
+ ],
+ "2": [
+  {
+   "q": "Which keyword starts a conditional statement in Python?",
+   "options": [
+    "if",
+    "when",
+    "check",
+    "condition"
+   ]
+  },
+  {
+   "q": "Which loop is commonly used to iterate directly over items in a sequence?",
+   "options": [
+    "for",
+    "if",
+    "try",
+    "def"
+   ]
+  },
+  {
+   "q": "What does break do inside a loop?",
+   "options": [
+    "Immediately exits the loop",
+    "Skips only the current iteration",
+    "Pauses the program forever",
+    "Defines a function"
+   ]
+  },
+  {
+   "q": "What does continue do inside a loop?",
+   "options": [
+    "Skips the rest of the current iteration",
+    "Ends the entire program",
+    "Creates another loop",
+    "Returns a value from a function"
+   ]
+  },
+  {
+   "q": "Which keyword is used to define a function?",
+   "options": [
+    "def",
+    "func",
+    "function",
+    "define"
+   ]
+  },
+  {
+   "q": "What value is returned by a function that reaches its end without a return statement?",
+   "options": [
+    "None",
+    "0",
+    "False",
+    "An empty string"
+   ]
+  },
+  {
+   "q": "Which numbers does range(1, 4) produce?",
+   "options": [
+    "1, 2, 3",
+    "1, 2, 3, 4",
+    "0, 1, 2, 3",
+    "1, 4"
+   ]
+  }
+ ],
+ "3": [
+  {
+   "q": "Which data structure is ordered and mutable?",
+   "options": [
+    "List",
+    "Tuple",
+    "Set",
+    "Dictionary key"
+   ]
+  },
+  {
+   "q": "Which collection is immutable after it is created?",
+   "options": [
+    "Tuple",
+    "List",
+    "Set",
+    "Dictionary"
+   ]
+  },
+  {
+   "q": "Which data structure automatically keeps only unique elements?",
+   "options": [
+    "Set",
+    "List",
+    "Tuple",
+    "String"
+   ]
+  },
+  {
+   "q": "Which syntax creates a dictionary with a name key and value Python?",
+   "options": [
+    "{\"name\": \"Python\"}",
+    "[\"name\", \"Python\"]",
+    "(\"name\", \"Python\")",
+    "{\"name\", \"Python\"}"
+   ]
+  },
+  {
+   "q": "Which method adds one item to the end of a list?",
+   "options": [
+    "append()",
+    "add()",
+    "push()",
+    "insertEnd()"
+   ]
+  },
+  {
+   "q": "Which dictionary method returns key-value pairs for iteration?",
+   "options": [
+    "items()",
+    "keys()",
+    "values()",
+    "pairs()"
+   ]
+  },
+  {
+   "q": "What does the list method pop() do when called without an argument?",
+   "options": [
+    "Removes and returns the last item",
+    "Adds an item at the start",
+    "Sorts the list",
+    "Copies the list"
+   ]
+  }
+ ],
+ "4": [
+  {
+   "q": "Which file mode opens a file for reading?",
+   "options": [
+    "r",
+    "w",
+    "a",
+    "x"
+   ]
+  },
+  {
+   "q": "Why is the with statement recommended when working with files?",
+   "options": [
+    "It manages the file resource and closes it after use",
+    "It converts every file to JSON",
+    "It prevents all file errors",
+    "It automatically deletes the file"
+   ]
+  },
+  {
+   "q": "Which method reads the complete contents of a text file?",
+   "options": [
+    "read()",
+    "write()",
+    "append()",
+    "scan()"
+   ]
+  },
+  {
+   "q": "Which block is used to handle an exception in Python?",
+   "options": [
+    "except",
+    "catch",
+    "error",
+    "handle"
+   ]
+  },
+  {
+   "q": "Which block can be used for cleanup code that should run whether an exception occurs or not?",
+   "options": [
+    "finally",
+    "always",
+    "cleanup",
+    "last"
+   ]
+  },
+  {
+   "q": "Which exception is commonly raised when converting non-numeric text with int()?",
+   "options": [
+    "ValueError",
+    "KeyError",
+    "IndexError",
+    "ImportError"
+   ]
+  },
+  {
+   "q": "What happens when a file that already exists is opened in \"w\" mode?",
+   "options": [
+    "Its old content is replaced",
+    "New text is added at the end",
+    "The file is opened read-only",
+    "An error is always raised"
+   ]
+  }
+ ],
+ "5": [
+  {
+   "q": "What is a class in object-oriented Python?",
+   "options": [
+    "A blueprint for creating objects",
+    "A single numeric value",
+    "A loop control statement",
+    "A file mode"
+   ]
+  },
+  {
+   "q": "What is an object?",
+   "options": [
+    "An instance of a class",
+    "A Python keyword",
+    "A database table",
+    "A type of loop"
+   ]
+  },
+  {
+   "q": "Which special method is commonly used to initialize object attributes?",
+   "options": [
+    "__init__()",
+    "__start__()",
+    "__create__()",
+    "__object__()"
+   ]
+  },
+  {
+   "q": "What does self normally refer to inside an instance method?",
+   "options": [
+    "The current object",
+    "The parent module",
+    "The class name as text",
+    "The Python interpreter"
+   ]
+  },
+  {
+   "q": "What is a major purpose of inheritance?",
+   "options": [
+    "Reuse and extend behavior from another class",
+    "Convert strings to integers",
+    "Open files automatically",
+    "Connect to SQLite"
+   ]
+  },
+  {
+   "q": "Which syntax shows a class inheriting from a base class named Vehicle?",
+   "options": [
+    "class Car(Vehicle):",
+    "class Car -> Vehicle:",
+    "class Car extends Vehicle:",
+    "def Car(Vehicle):"
+   ]
+  },
+  {
+   "q": "Which function lets a child class access methods of its parent class?",
+   "options": [
+    "super()",
+    "parent()",
+    "base()",
+    "this()"
+   ]
+  }
+ ],
+ "6": [
+  {
+   "q": "Which Python standard-library module provides SQLite database support?",
+   "options": [
+    "sqlite3",
+    "database",
+    "sql",
+    "sqlite"
+   ]
+  },
+  {
+   "q": "Which function opens a connection to an SQLite database file?",
+   "options": [
+    "sqlite3.connect()",
+    "sqlite3.open()",
+    "sqlite3.start()",
+    "sqlite3.database()"
+   ]
+  },
+  {
+   "q": "What is a cursor commonly used for?",
+   "options": [
+    "Executing SQL statements and retrieving results",
+    "Styling a web page",
+    "Creating Python classes",
+    "Compressing a database file"
+   ]
+  },
+  {
+   "q": "Which SQL command retrieves records from a table?",
+   "options": [
+    "SELECT",
+    "INSERT",
+    "UPDATE",
+    "DELETE"
+   ]
+  },
+  {
+   "q": "Which SQL operation is used to modify existing records?",
+   "options": [
+    "UPDATE",
+    "SELECT",
+    "CREATE",
+    "CONNECT"
+   ]
+  },
+  {
+   "q": "Which SQL statement adds a new row to a table?",
+   "options": [
+    "INSERT",
+    "SELECT",
+    "UPDATE",
+    "ALTER"
+   ]
+  },
+  {
+   "q": "Which connection method cancels changes that have not been committed?",
+   "options": [
+    "rollback()",
+    "commit()",
+    "undo()",
+    "close()"
+   ]
+  }
+ ],
+ "7": [
+  {
+   "q": "What does an API provide between software systems?",
+   "options": [
+    "A defined way for systems to communicate",
+    "A Python loop",
+    "A local variable",
+    "A file compression format"
+   ]
+  },
+  {
+   "q": "Which popular third-party Python library is used to send HTTP requests?",
+   "options": [
+    "requests",
+    "sqlite3",
+    "tkinter",
+    "random"
+   ]
+  },
+  {
+   "q": "What does HTTP status code 200 generally indicate?",
+   "options": [
+    "The request succeeded",
+    "The server was not found",
+    "The request was unauthorized",
+    "The server had an error"
+   ]
+  },
+  {
+   "q": "What is a key benefit of automation?",
+   "options": [
+    "It performs repetitive tasks consistently",
+    "It removes the need to validate inputs",
+    "It guarantees every program is error-free",
+    "It prevents programs from using loops"
+   ]
+  },
+  {
+   "q": "What is the main purpose of a report generated from processed data?",
+   "options": [
+    "Present useful summaries in an understandable format",
+    "Replace all source data",
+    "Disable database access",
+    "Hide calculation results"
+   ]
+  },
+  {
+   "q": "Which Python standard-library module can encode and decode JSON data?",
+   "options": [
+    "json",
+    "csv",
+    "pathlib",
+    "sqlite3"
+   ]
+  },
+  {
+   "q": "Why should requests.get() be given a timeout?",
+   "options": [
+    "So the program does not wait forever for a response",
+    "So the response is converted to JSON",
+    "So the status code is always 200",
+    "So the data is saved to a file"
+   ]
+  }
+ ]
+}

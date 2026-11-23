@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Module Quizzes • PyLearn Studio{% endblock %}
+{% block heading %}Module Quizzes{% endblock %}
+{% block content %}
+<div class="stat-grid">
+  <div class="stat"><span>Quizzes Passed</span><strong>{{ passed }} / {{ rows|length }}</strong></div>
+  <div class="stat"><span>Questions per Quiz</span><strong>{{ total_q }}</strong></div>
+  <div class="stat"><span>Pass Mark</span><strong>{{ need }}/{{ total_q }}</strong></div>
+  <div class="stat"><span>Certificate</span><strong>{% if passed == rows|length %}Quizzes done{% else %}Pass all{% endif %}</strong></div>
+</div>
+<div class="panel">
+  <h2>Quiz for each module</h2>
+  <p class="muted">Every module has its own quiz of {{ total_q }} questions. Pass all {{ rows|length }} quizzes ({{ pass_percent }}%+) and complete every topic to unlock the certificate.</p>
+  <table>
+    <tr><th>Module</th><th>Topics done</th><th>Best score</th><th>Attempts</th><th>Status</th><th></th></tr>
+    {% for r in rows %}
+    <tr>
+      <td><b>0{{ r.module.id }}</b> {{ r.module.title }}</td>
+      <td>{{ r.topics_done }} / {{ r.topics_total }}</td>
+      <td>{% if r.status %}{{ r.status.best_score }}/{{ r.status.best_total }}{% else %}—{% endif %}</td>
+      <td>{{ r.status.attempts if r.status else 0 }}</td>
+      <td>{% if r.status and r.status.passed %}<span class="badge-pass">Passed</span>{% elif r.status %}<span class="badge-fail">Retry</span>{% else %}<span class="muted">Not taken</span>{% endif %}</td>
+      <td><a class="btn secondary" href="{{ url_for('quiz', module_id=r.module.id) }}">{% if r.status %}Retake{% else %}Start{% endif %} →</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}

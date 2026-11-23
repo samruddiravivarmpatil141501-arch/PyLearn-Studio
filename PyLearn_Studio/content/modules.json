@@ -1,0 +1,1597 @@
+[
+ {
+  "id": 1,
+  "title": "Python Fundamentals",
+  "description": "Learn the foundations of Python: syntax, variables, data types, operators, input/output and beginner programs.",
+  "topics": [
+   {
+    "id": 101,
+    "title": "Introduction to Python",
+    "matter": "Python is a high-level programming language designed to make programming readable and productive. Its clear syntax allows beginners to focus on solving problems instead of dealing with unnecessary complexity. Python is widely used for automation, web development, data analysis, artificial intelligence and machine learning. In this lesson, learners understand what Python is, where it is used and how to run a first program.",
+    "syntax": "print(\"message\")",
+    "subconcepts": [
+     [
+      "What is Python?",
+      "Python is a general-purpose programming language known for readable syntax and a large standard library."
+     ],
+     [
+      "Where Python is used",
+      "Python is used in automation, web applications, data analysis, AI/ML, testing and many other areas."
+     ],
+     [
+      "First Python program",
+      "The print() function is one of the simplest ways to display information on the screen."
+     ]
+    ],
+    "practice": "Write a program that displays a short welcome message for a programming course.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20Introduction%20to%20Python%20tutorial",
+    "example": [
+     "Greeting program",
+     "print(\"Welcome to Python!\")",
+     "Welcome to Python!"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 102,
+    "title": "Python Syntax",
+    "matter": "Syntax is the set of rules that determines how Python statements must be written. Python uses indentation to organize blocks of code, and it is case-sensitive, so uppercase and lowercase names are different. Comments can be added to explain code without affecting program execution. Understanding syntax early helps learners read error messages and write clean programs.",
+    "syntax": "if condition:\n    statement",
+    "subconcepts": [
+     [
+      "Statements",
+      "A statement is an instruction that Python executes, such as an assignment or a function call."
+     ],
+     [
+      "Indentation",
+      "Indentation groups related statements inside structures such as if statements and loops."
+     ],
+     [
+      "Comments",
+      "Comments begin with # and help explain code to people without being executed by Python."
+     ]
+    ],
+    "practice": "Write a small program containing one comment and two print statements.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20Python%20Syntax%20tutorial",
+    "example": [
+     "Comment and statement",
+     "# Display a course message\nprint(\"Python practice\")",
+     "Python practice"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 103,
+    "title": "Variables",
+    "matter": "A variable is a name used to store information so a program can use that information later. Python creates a variable when a value is assigned to a name, and it automatically determines the value's data type. Meaningful names make programs easier to understand, while reassignment allows stored information to change during execution.",
+    "syntax": "variable_name = value",
+    "subconcepts": [
+     [
+      "Creating variables",
+      "Use the assignment operator = to store a value under a meaningful name."
+     ],
+     [
+      "Naming variables",
+      "Names may contain letters, numbers and underscores, but should not start with a number."
+     ],
+     [
+      "Changing values",
+      "Assigning a new value to an existing variable replaces the previous value."
+     ]
+    ],
+    "practice": "Create variables for a product name, quantity and price, then display them.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20Variables%20tutorial",
+    "example": [
+     "Product details",
+     "product = \"Notebook\"\nprice = 45\nprint(product)\nprint(price)",
+     "Notebook\n45"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 104,
+    "title": "Data Types",
+    "matter": "A data type describes the kind of value stored in a variable. Common beginner types are int for whole numbers, float for decimal numbers, str for text and bool for True or False values. Knowing the type of data helps learners choose suitable operations and avoid unexpected results.",
+    "syntax": "type(value)",
+    "subconcepts": [
+     [
+      "int",
+      "The int type represents whole numbers such as 5, 100 or -3."
+     ],
+     [
+      "float",
+      "The float type represents numbers containing a decimal part."
+     ],
+     [
+      "str",
+      "The str type stores text inside quotation marks."
+     ],
+     [
+      "bool",
+      "The bool type stores either True or False."
+     ]
+    ],
+    "practice": "Create one variable of each basic type and display its type.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20Data%20Types%20tutorial",
+    "example": [
+     "Number type",
+     "items = 12\nprint(type(items))",
+     "<class 'int'>"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 105,
+    "title": "Type Conversion",
+    "matter": "Type conversion changes a value from one data type to another when the program requires it. Functions such as int(), float() and str() are commonly used for conversion. This is especially important when working with input because input() returns text, even when the user enters a number.",
+    "syntax": "new_value = target_type(value)",
+    "subconcepts": [
+     [
+      "int()",
+      "Converts a suitable value to an integer."
+     ],
+     [
+      "float()",
+      "Converts a suitable value to a decimal number."
+     ],
+     [
+      "str()",
+      "Converts a value to text so it can be combined with strings."
+     ]
+    ],
+    "practice": "Take a number stored as text, convert it to an integer and add 10.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20Type%20Conversion%20tutorial",
+    "example": [
+     "Convert text to number",
+     "quantity_text = \"6\"\nquantity = int(quantity_text)\nprint(quantity + 2)",
+     "8"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 106,
+    "title": "Operators",
+    "matter": "Operators are symbols or keywords used to perform operations on values. Arithmetic operators perform calculations, comparison operators compare values, assignment operators update variables, and logical operators combine conditions. Operator precedence determines the order in which an expression is evaluated.",
+    "syntax": "result = value1 operator value2",
+    "subconcepts": [
+     [
+      "Arithmetic operators",
+      "Use +, -, *, /, //, %, and ** for common numerical operations."
+     ],
+     [
+      "Comparison operators",
+      "Operators such as ==, !=, >, <, >= and <= compare values and produce a Boolean result."
+     ],
+     [
+      "Logical operators",
+      "and, or and not combine or modify conditions."
+     ]
+    ],
+    "practice": "Build a program that calculates the total cost of two products.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20Operators%20tutorial",
+    "example": [
+     "Shopping total",
+     "price = 120\nquantity = 3\nprint(price * quantity)",
+     "360"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 107,
+    "title": "Input and Output",
+    "matter": "Programs become interactive when they can receive information from users and display useful results. Python uses input() to read keyboard input and print() to display output. Because input() returns a string, numerical input normally needs conversion before arithmetic operations are performed.",
+    "syntax": "value = input(\"prompt\")",
+    "subconcepts": [
+     [
+      "print()",
+      "Displays text or values on the screen."
+     ],
+     [
+      "input()",
+      "Reads a value entered by the user and returns it as a string."
+     ],
+     [
+      "Formatted output",
+      "Output can combine labels and values to make results easier to understand."
+     ]
+    ],
+    "practice": "Ask the user for a product name and quantity and display a sentence using both values.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20Input%20and%20Output%20tutorial",
+    "example": [
+     "Text input",
+     "city = input(\"Enter a city: \")\nprint(\"Selected:\", city)",
+     "Enter a city: Selected: Pune"
+    ],
+    "example_stdin": "Pune",
+    "run_note": ""
+   },
+   {
+    "id": 108,
+    "title": "Simple Python Programs",
+    "matter": "Small programs combine multiple basic concepts to solve a specific problem. Instead of learning syntax in isolation, learners should practice turning a simple requirement into variables, input, calculations and output. These programs provide the foundation for larger applications.",
+    "syntax": "input → process → output",
+    "subconcepts": [
+     [
+      "Area calculation",
+      "Use dimensions and arithmetic operators to calculate the area of a shape."
+     ],
+     [
+      "Average calculation",
+      "Add values and divide by the number of values to find an average."
+     ],
+     [
+      "Unit conversion",
+      "Use a mathematical formula to convert one measurement into another."
+     ]
+    ],
+    "practice": "Create a simple program that calculates the area of a rectangle.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20Simple%20Python%20Programs%20tutorial",
+    "example": [
+     "Average calculator",
+     "a = 70\nb = 80\nc = 90\navg = (a + b + c) / 3\nprint(\"Average:\", avg)",
+     "Average: 80.0"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 109,
+    "title": "Calculator Activity",
+    "matter": "A calculator is a useful first mini-application because it combines input, type conversion, arithmetic operators and output in one program. Learners can begin with two numbers and then extend the program with more operations and validation.",
+    "syntax": "result = number1 operator number2",
+    "subconcepts": [
+     [
+      "Arithmetic operations",
+      "Use operators to calculate addition, subtraction, multiplication and division."
+     ],
+     [
+      "User input",
+      "Accept the two values that the calculator should process."
+     ],
+     [
+      "Validation",
+      "Check for situations such as division by zero before calculating."
+     ]
+    ],
+    "practice": "Build a two-number calculator with addition, subtraction, multiplication and division.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20Calculator%20Activity%20tutorial",
+    "example": [
+     "Addition",
+     "first = 18\nsecond = 7\nprint(first + second)",
+     "25"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   }
+  ],
+  "video_id": "kqtD5dpn9C8",
+  "video_title": "Module 1 video lesson"
+ },
+ {
+  "id": 2,
+  "title": "Control Flow and Functions",
+  "description": "Learn decisions, loops and reusable functions to control how Python programs execute.",
+  "topics": [
+   {
+    "id": 201,
+    "title": "if, elif and else",
+    "matter": "Conditional statements allow a program to choose different actions depending on whether a condition is true or false.",
+    "syntax": "if condition:\n    statement\nelse:\n    statement",
+    "subconcepts": [
+     [
+      "Conditions",
+      "Conditions produce True or False results."
+     ],
+     [
+      "elif",
+      "elif checks another condition when earlier conditions are false."
+     ],
+     [
+      "Nested decisions",
+      "A condition can contain another decision when a problem requires multiple levels of checking."
+     ]
+    ],
+    "practice": "Create a program that categorizes a number as positive, negative or zero.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20if%2C%20elif%20and%20else%20tutorial",
+    "example": [
+     "Age category",
+     "age = 20\nif age >= 18:\n    print(\"Adult\")\nelse:\n    print(\"Minor\")",
+     "Adult"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 202,
+    "title": "for and while Loops",
+    "matter": "Loops repeat a block of code so that a task does not have to be written again and again. for is commonly used when iterating over a sequence or known range, while repeats while a condition remains true.",
+    "syntax": "for item in sequence:\n    statement",
+    "subconcepts": [
+     [
+      "for loop",
+      "Repeats code for each item in a sequence or range."
+     ],
+     [
+      "while loop",
+      "Repeats code while its condition remains true."
+     ],
+     [
+      "range()",
+      "Generates a sequence of numbers useful for controlled repetition."
+     ]
+    ],
+    "practice": "Print the first ten natural numbers using a loop.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20for%20and%20while%20Loops%20tutorial",
+    "example": [
+     "Range loop",
+     "for i in range(1, 6):\n    print(i)",
+     "1\n2\n3\n4\n5"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 203,
+    "title": "break, continue and pass",
+    "matter": "Loop-control statements change the normal flow of a loop. break stops a loop, continue skips the current iteration, and pass acts as a placeholder when code is intentionally left empty.",
+    "syntax": "for item in sequence:\n    if condition:\n        break",
+    "subconcepts": [
+     [
+      "break",
+      "Immediately ends the nearest loop."
+     ],
+     [
+      "continue",
+      "Skips the remaining statements for the current iteration."
+     ],
+     [
+      "pass",
+      "Does nothing and is useful as a temporary placeholder."
+     ]
+    ],
+    "practice": "Print numbers from 1 to 10 but skip 5.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20break%2C%20continue%20and%20pass%20tutorial",
+    "example": [
+     "Stop at value",
+     "for n in range(1, 10):\n    if n == 5:\n        break\n    print(n)",
+     "1\n2\n3\n4"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 204,
+    "title": "Functions",
+    "matter": "Functions group instructions into a reusable block. They reduce repetition and make programs easier to organize, test and maintain. A function can accept inputs through parameters and can send a result back using return.",
+    "syntax": "def function_name(parameters):\n    statements\n    return value",
+    "subconcepts": [
+     [
+      "Parameters",
+      "Parameters allow a function to receive values from the caller."
+     ],
+     [
+      "return",
+      "return sends a result back to the place where the function was called."
+     ],
+     [
+      "Function reuse",
+      "A function can be called multiple times with different inputs."
+     ]
+    ],
+    "practice": "Create a function that returns the square of a number.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20Functions%20tutorial",
+    "example": [
+     "Greeting function",
+     "def greet(name):\n    return \"Hello \" + name\n\nprint(greet(\"Alex\"))",
+     "Hello Alex"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 205,
+    "title": "Nested Conditions",
+    "matter": "Nested conditions place one decision inside another. The outer condition is checked first, and only when it is true does Python evaluate the inner condition. This is useful for layered eligibility, validation and access decisions.",
+    "syntax": "if condition:\n    if another_condition:\n        statement",
+    "subconcepts": [
+     [
+      "Outer condition",
+      "Controls whether the inner block is reached."
+     ],
+     [
+      "Inner condition",
+      "Performs an additional check."
+     ],
+     [
+      "Indentation",
+      "Each nesting level must use consistent indentation."
+     ]
+    ],
+    "practice": "Create a program that checks two related eligibility conditions.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20Nested%20Conditions%20tutorial",
+    "example": [
+     "Grade category",
+     "score = 82\nif score >= 50:\n    if score >= 75:\n        print(\"Distinction\")\n    else:\n        print(\"Pass\")\nelse:\n    print(\"Fail\")",
+     "Distinction"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 206,
+    "title": "Function Parameters and Arguments",
+    "matter": "Parameters are names defined in a function, while arguments are the actual values supplied when the function is called. Parameters make functions reusable because the same logic can work with different data.",
+    "syntax": "def function_name(parameter):\n    statement",
+    "subconcepts": [
+     [
+      "Parameters",
+      "Variables listed in a function definition."
+     ],
+     [
+      "Arguments",
+      "Values supplied to a function call."
+     ],
+     [
+      "Default arguments",
+      "A parameter can have a default value."
+     ]
+    ],
+    "practice": "Write a function that accepts a student name and displays a message.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20Function%20Parameters%20and%20Arguments%20tutorial",
+    "example": [
+     "Area calculator",
+     "def area(length, width):\n    return length * width\nprint(area(8, 5))",
+     "40"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 207,
+    "title": "Return Values",
+    "matter": "The return statement sends a result from a function back to the calling code. Returned values can be stored, printed, combined with other expressions or passed into another function.",
+    "syntax": "def function_name():\n    return value",
+    "subconcepts": [
+     [
+      "return",
+      "Ends the function and sends a value back."
+     ],
+     [
+      "Using results",
+      "A returned value can be stored or reused."
+     ],
+     [
+      "None",
+      "A function without an explicit return normally produces None."
+     ]
+    ],
+    "practice": "Create a function that returns the total cost from price and quantity.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20Return%20Values%20tutorial",
+    "example": [
+     "Discount calculation",
+     "def final_price(price, discount):\n    return price - (price * discount / 100)\nprint(final_price(500, 10))",
+     "450.0"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 208,
+    "title": "Scope and Local Variables",
+    "matter": "Scope describes where a variable name can be accessed. Variables created inside a function are normally local to that function, while names defined outside functions belong to the wider module scope. Understanding scope helps prevent unintended changes.",
+    "syntax": "def demo():\n    value = 10\n    print(value)",
+    "subconcepts": [
+     [
+      "Local scope",
+      "A variable created inside a function is normally available only there."
+     ],
+     [
+      "Global scope",
+      "A name created outside functions has wider module scope."
+     ],
+     [
+      "Name visibility",
+      "Scope determines where a name can be used."
+     ]
+    ],
+    "practice": "Write a function with a local variable and display it from inside the function.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20Scope%20and%20Local%20Variables%20tutorial",
+    "example": [
+     "Local variable",
+     "def show_status():\n    status = \"Ready\"\n    print(status)\nshow_status()",
+     "Ready"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   }
+  ],
+  "video_id": "rfscVS0vtbw",
+  "video_title": "Module 2 video lesson"
+ },
+ {
+  "id": 3,
+  "title": "Data Structures",
+  "description": "Work with lists, tuples, sets and dictionaries to organize collections of data.",
+  "topics": [
+   {
+    "id": 301,
+    "title": "Lists",
+    "matter": "A list stores multiple values in an ordered and changeable collection. Lists are useful for groups of related data such as products, marks or tasks.",
+    "syntax": "list_name = [item1, item2, item3]",
+    "subconcepts": [
+     [
+      "Indexing",
+      "Access an item using its position, starting from index 0."
+     ],
+     [
+      "append()",
+      "Adds an item to the end of a list."
+     ],
+     [
+      "Slicing",
+      "Selects a range of items from a list."
+     ]
+    ],
+    "practice": "Create a list of five subjects and print the third subject.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20Lists%20tutorial",
+    "example": [
+     "Shopping items",
+     "items = [\"Pen\", \"Book\", \"Bag\"]\nprint(items[0])",
+     "Pen"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 302,
+    "title": "Tuples",
+    "matter": "A tuple is an ordered collection that cannot be changed after creation. Tuples are useful for fixed groups of related values.",
+    "syntax": "tuple_name = (item1, item2, item3)",
+    "subconcepts": [
+     [
+      "Creation",
+      "Tuples are usually written with parentheses."
+     ],
+     [
+      "Indexing",
+      "Tuple elements can be accessed using indexes."
+     ],
+     [
+      "Immutability",
+      "Tuple elements cannot be replaced after creation."
+     ]
+    ],
+    "practice": "Create a tuple containing three course names and display the second one.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20Tuples%20tutorial",
+    "example": [
+     "Coordinates",
+     "point = (10, 20)\nprint(point[0])",
+     "10"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 303,
+    "title": "Sets",
+    "matter": "A set stores unique values and is useful when duplicates should be removed or membership needs to be checked efficiently.",
+    "syntax": "set_name = {item1, item2}",
+    "subconcepts": [
+     [
+      "Unique values",
+      "Sets automatically keep only unique elements."
+     ],
+     [
+      "Membership",
+      "The in operator checks whether a value exists in a set."
+     ],
+     [
+      "Set operations",
+      "Union and intersection combine or compare sets."
+     ]
+    ],
+    "practice": "Create two sets of numbers and find their common values.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20Sets%20tutorial",
+    "example": [
+     "Remove duplicates",
+     "values = {2, 2, 4, 6}\nprint(values)",
+     "{2, 4, 6}"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 304,
+    "title": "Dictionaries",
+    "matter": "A dictionary stores information as key-value pairs. It is useful when data needs meaningful labels instead of numeric indexes.",
+    "syntax": "dictionary_name = {\"key\": value}",
+    "subconcepts": [
+     [
+      "Keys and values",
+      "Each dictionary entry connects a key with its corresponding value."
+     ],
+     [
+      "Accessing values",
+      "Use a key to retrieve its value."
+     ],
+     [
+      "Updating data",
+      "Assign a new value to an existing key to update information."
+     ]
+    ],
+    "practice": "Create a dictionary containing a book title, author and price.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20Dictionaries%20tutorial",
+    "example": [
+     "Product record",
+     "product = {\"name\": \"Mouse\", \"price\": 650}\nprint(product[\"name\"])",
+     "Mouse"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 305,
+    "title": "List Methods",
+    "matter": "List methods provide ready-made operations for changing and inspecting list data. Common methods include append(), insert(), remove(), pop(), sort() and reverse(). Learning these methods makes collection processing shorter and clearer.",
+    "syntax": "list_name.append(value)\nlist_name.remove(value)",
+    "subconcepts": [
+     [
+      "append()",
+      "Adds an item to the end."
+     ],
+     [
+      "insert()",
+      "Adds an item at a chosen position."
+     ],
+     [
+      "remove() and pop()",
+      "Remove an item by value or position."
+     ],
+     [
+      "sort()",
+      "Arranges comparable values."
+     ]
+    ],
+    "practice": "Create a subject list, add a subject, and remove one subject.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20List%20Methods%20tutorial",
+    "example": [
+     "Adding and removing items",
+     "colors = [\"red\", \"blue\"]\ncolors.append(\"green\")\ncolors.remove(\"blue\")\nprint(colors)",
+     "['red', 'green']"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 306,
+    "title": "List Slicing",
+    "matter": "Slicing extracts a selected portion of a sequence without changing the original list. The start index is included, the stop index is excluded, and an optional step controls how positions are selected.",
+    "syntax": "list_name[start:stop:step]",
+    "subconcepts": [
+     [
+      "Start",
+      "First included index."
+     ],
+     [
+      "Stop",
+      "First excluded index."
+     ],
+     [
+      "Step",
+      "Controls the interval between selected items."
+     ]
+    ],
+    "practice": "Use slicing to display the first three elements and a reversed version of a list.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20List%20Slicing%20tutorial",
+    "example": [
+     "Selecting a range",
+     "numbers = [10, 20, 30, 40, 50, 60]\nprint(numbers[1:5:2])",
+     "[20, 40]"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 307,
+    "title": "Tuple Packing and Unpacking",
+    "matter": "Tuple packing groups multiple values into one tuple, while unpacking assigns tuple elements to separate variables. This is useful for fixed groups of data and for functions that return multiple values.",
+    "syntax": "a, b = (1, 2)",
+    "subconcepts": [
+     [
+      "Packing",
+      "Combines multiple values into a tuple."
+     ],
+     [
+      "Unpacking",
+      "Assigns tuple elements to variables."
+     ],
+     [
+      "Multiple return values",
+      "Functions can return several values as a tuple."
+     ]
+    ],
+    "practice": "Create a tuple containing a course and duration, then unpack it.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20Tuple%20Packing%20and%20Unpacking%20tutorial",
+    "example": [
+     "Coordinate unpacking",
+     "point = (12, 18)\nx, y = point\nprint(x, y)",
+     "12 18"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 308,
+    "title": "Dictionary Methods",
+    "matter": "Dictionary methods make it easier to read, update and inspect key-value data. Important methods include get(), keys(), values(), items(), update() and pop().",
+    "syntax": "dictionary.get(key)\ndictionary.update(data)",
+    "subconcepts": [
+     [
+      "get()",
+      "Reads a value and can provide a default."
+     ],
+     [
+      "keys() and values()",
+      "Access dictionary keys and values."
+     ],
+     [
+      "items()",
+      "Provides key-value pairs."
+     ],
+     [
+      "update()",
+      "Adds or changes key-value pairs."
+     ]
+    ],
+    "practice": "Create a student dictionary and use get() and update().",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20Dictionary%20Methods%20tutorial",
+    "example": [
+     "Reading dictionary values",
+     "profile = {\"name\": \"Asha\", \"score\": 91}\nprint(profile.get(\"score\"))",
+     "91"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   }
+  ],
+  "video_id": "rfscVS0vtbw",
+  "video_title": "Module 3 video lesson"
+ },
+ {
+  "id": 4,
+  "title": "File Handling and Exception Handling",
+  "description": "Read and write files and handle runtime problems without crashing the application.",
+  "topics": [
+   {
+    "id": 401,
+    "title": "Reading and Writing Files",
+    "matter": "File handling allows a Python program to store information outside the running program. Files can be opened in modes such as read, write and append. Using with is recommended because it automatically manages closing the file.",
+    "syntax": "with open(\"file.txt\", \"mode\") as file:\n    statement",
+    "subconcepts": [
+     [
+      "Modes",
+      "Common modes include r for reading, w for writing and a for appending."
+     ],
+     [
+      "with statement",
+      "with safely manages a file resource and closes it after use."
+     ],
+     [
+      "read and write",
+      "read() gets file content while write() stores text."
+     ]
+    ],
+    "practice": "Create a text file and write three lines into it.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20Reading%20and%20Writing%20Files%20tutorial",
+    "example": [
+     "Write then read a file",
+     "with open(\"notes.txt\", \"w\") as file:\n    file.write(\"Practice Python\")\n\nwith open(\"notes.txt\", \"r\") as file:\n    content = file.read()\nprint(content)",
+     "Practice Python"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 402,
+    "title": "Exception Handling",
+    "matter": "Exceptions are runtime problems that interrupt normal execution. Python provides try and except so a program can respond to expected errors and continue safely. finally can be used for cleanup that should happen regardless of success or failure.",
+    "syntax": "try:\n    statement\nexcept ErrorType:\n    statement",
+    "subconcepts": [
+     [
+      "try",
+      "Contains code that may raise an exception."
+     ],
+     [
+      "except",
+      "Handles a specified exception."
+     ],
+     [
+      "finally",
+      "Runs after the try/except process whether an exception occurred or not."
+     ]
+    ],
+    "practice": "Write a program that safely converts user input into an integer.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20Exception%20Handling%20tutorial",
+    "example": [
+     "Invalid number",
+     "try:\n    value = int(\"abc\")\nexcept ValueError:\n    print(\"Invalid number\")",
+     "Invalid number"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 403,
+    "title": "File Modes and Paths",
+    "matter": "The open() function uses a path and mode to control file access. Common modes are r for reading, w for writing or replacing content, a for appending, and x for creating a new file.",
+    "syntax": "open(file_path, mode)",
+    "subconcepts": [
+     [
+      "Read mode",
+      "r reads an existing file."
+     ],
+     [
+      "Write mode",
+      "w creates or replaces content."
+     ],
+     [
+      "Append mode",
+      "a adds content to the end."
+     ],
+     [
+      "Path",
+      "Identifies the file location."
+     ]
+    ],
+    "practice": "Append one line to a text file.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20File%20Modes%20and%20Paths%20tutorial",
+    "example": [
+     "Append to a file",
+     "with open(\"log.txt\", \"a\") as file:\n    file.write(\"New entry\\n\")\nprint(\"Entry added\")",
+     "Entry added"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 404,
+    "title": "with Statement for Files",
+    "matter": "The with statement creates a managed context for file operations and automatically closes the file when the block ends. It keeps file-handling code clean and reduces resource-management mistakes.",
+    "syntax": "with open(file_path, mode) as file:\n    data = file.read()",
+    "subconcepts": [
+     [
+      "Context manager",
+      "Manages setup and cleanup for the file."
+     ],
+     [
+      "Automatic closing",
+      "The file is closed when the with block finishes."
+     ],
+     [
+      "Readable structure",
+      "Related file operations stay inside one block."
+     ]
+    ],
+    "practice": "Read a text file using with and print its contents.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20with%20Statement%20for%20Files%20tutorial",
+    "example": [
+     "Read a file safely",
+     "with open(\"data.txt\", \"w\") as file:\n    file.write(\"File content\")\n\nwith open(\"data.txt\", \"r\") as file:\n    content = file.read()\nprint(content)",
+     "File content"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 405,
+    "title": "File Exceptions",
+    "matter": "File operations can fail when a path is incorrect or access is unavailable. Handling expected exceptions lets the program display a useful message instead of terminating unexpectedly.",
+    "syntax": "try:\n    with open(path) as file:\n        data = file.read()\nexcept FileNotFoundError:\n    statement",
+    "subconcepts": [
+     [
+      "FileNotFoundError",
+      "Raised when the requested file does not exist."
+     ],
+     [
+      "PermissionError",
+      "Can occur when access is not allowed."
+     ],
+     [
+      "Specific handling",
+      "Catch the expected exception for clearer feedback."
+     ]
+    ],
+    "practice": "Handle a missing-file error with a helpful message.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20File%20Exceptions%20tutorial",
+    "example": [
+     "Missing file handling",
+     "try:\n    with open(\"missing.txt\", \"r\") as file:\n        print(file.read())\nexcept FileNotFoundError:\n    print(\"File not found\")",
+     "File not found"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 406,
+    "title": "Custom Exceptions",
+    "matter": "Custom exceptions represent application-specific error conditions. A custom exception normally inherits from Exception and is raised when a program rule is violated. This makes validation errors easier to identify and handle.",
+    "syntax": "class CustomError(Exception):\n    pass\nraise CustomError(\"message\")",
+    "subconcepts": [
+     [
+      "Exception class",
+      "Usually inherits from Exception."
+     ],
+     [
+      "raise",
+      "Deliberately signals an error."
+     ],
+     [
+      "Handling",
+      "Custom errors can be caught with except."
+     ]
+    ],
+    "practice": "Create a custom exception for an invalid score.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20Custom%20Exceptions%20tutorial",
+    "example": [
+     "Positive-value validation",
+     "class InvalidValueError(Exception):\n    pass\n\nvalue = -2\ntry:\n    if value < 0:\n        raise InvalidValueError(\"Value must be positive\")\nexcept InvalidValueError as error:\n    print(error)",
+     "Value must be positive"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   }
+  ],
+  "video_id": "rfscVS0vtbw",
+  "video_title": "Module 4 video lesson"
+ },
+ {
+  "id": 5,
+  "title": "Object-Oriented Programming",
+  "description": "Understand classes, objects, constructors, methods, inheritance and encapsulation.",
+  "topics": [
+   {
+    "id": 501,
+    "title": "Classes and Objects",
+    "matter": "Object-oriented programming models software using classes and objects. A class defines a structure and behavior, while an object is an instance created from that class. This approach helps organize larger programs around meaningful entities.",
+    "syntax": "class ClassName:\n    def method(self):\n        statement",
+    "subconcepts": [
+     [
+      "Class",
+      "A class is a blueprint that defines attributes and behavior."
+     ],
+     [
+      "Object",
+      "An object is an instance of a class."
+     ],
+     [
+      "Method",
+      "A method is a function defined inside a class."
+     ]
+    ],
+    "practice": "Create a Student class with one method that displays a course name.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20Classes%20and%20Objects%20tutorial",
+    "example": [
+     "Book object",
+     "class Book:\n    def show(self):\n        print(\"Python Basics\")\n\nbook = Book()\nbook.show()",
+     "Python Basics"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 502,
+    "title": "Constructors and self",
+    "matter": "The __init__ method initializes object data when an object is created. The self parameter refers to the current object and is used to access its attributes and methods.",
+    "syntax": "def __init__(self, value):\n    self.value = value",
+    "subconcepts": [
+     [
+      "__init__",
+      "Runs automatically when an object is created."
+     ],
+     [
+      "self",
+      "Refers to the current object."
+     ],
+     [
+      "Attributes",
+      "Store information belonging to an object."
+     ]
+    ],
+    "practice": "Create a class with a constructor that stores a person's name and age.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20Constructors%20and%20self%20tutorial",
+    "example": [
+     "Product object",
+     "class Product:\n    def __init__(self, price):\n        self.price = price\n\np = Product(250)\nprint(p.price)",
+     "250"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 503,
+    "title": "Inheritance",
+    "matter": "Inheritance allows one class to reuse and extend features of another class. It is useful when several classes share common behavior but also need their own specialized behavior.",
+    "syntax": "class Child(Parent):\n    statement",
+    "subconcepts": [
+     [
+      "Parent class",
+      "Provides common attributes or methods."
+     ],
+     [
+      "Child class",
+      "Inherits features and can add its own behavior."
+     ],
+     [
+      "Reuse",
+      "Inheritance reduces duplication when classes share common functionality."
+     ]
+    ],
+    "practice": "Create a base Shape class and a Rectangle child class.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20Inheritance%20tutorial",
+    "example": [
+     "Vehicle inheritance",
+     "class Vehicle:\n    def move(self):\n        print(\"Moving\")\n\nclass Car(Vehicle):\n    pass\n\nCar().move()",
+     "Moving"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 504,
+    "title": "Instance Attributes and Methods",
+    "matter": "Instance attributes store data separately for each object, while instance methods define behavior that can use that data. The self parameter refers to the current object.",
+    "syntax": "class Student:\n    def __init__(self, name):\n        self.name = name",
+    "subconcepts": [
+     [
+      "Instance attribute",
+      "Data stored for an individual object."
+     ],
+     [
+      "Instance method",
+      "A function inside a class that works with an object."
+     ],
+     [
+      "self",
+      "Reference to the current instance."
+     ]
+    ],
+    "practice": "Create a class with one attribute and one method.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20Instance%20Attributes%20and%20Methods%20tutorial",
+    "example": [
+     "Book object behavior",
+     "class Book:\n    def __init__(self, title):\n        self.title = title\n    def show(self):\n        print(self.title)\n\nbook = Book(\"Python Basics\")\nbook.show()",
+     "Python Basics"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 505,
+    "title": "Encapsulation",
+    "matter": "Encapsulation groups related data and behavior inside a class and encourages controlled access to internal state. Python commonly uses naming conventions such as a leading underscore and properties or methods to validate updates.",
+    "syntax": "class Account:\n    def __init__(self):\n        self._balance = 0",
+    "subconcepts": [
+     [
+      "Internal attributes",
+      "A leading underscore communicates intended internal use."
+     ],
+     [
+      "Controlled updates",
+      "Methods can validate values before changing state."
+     ],
+     [
+      "Properties",
+      "Properties can provide controlled access to attributes."
+     ]
+    ],
+    "practice": "Design a class that stores an internal score and updates it safely.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20Encapsulation%20tutorial",
+    "example": [
+     "Controlled update of internal data",
+     "class Account:\n    def __init__(self):\n        self._balance = 1000\n\n    def deposit(self, amount):\n        if amount > 0:\n            self._balance += amount\n\n    def show_balance(self):\n        print(self._balance)\n\nacc = Account()\nacc.deposit(500)\nacc.show_balance()",
+     "1500"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 506,
+    "title": "Polymorphism",
+    "matter": "Polymorphism allows different classes to provide a common method name while implementing behavior appropriate to each object. Code can then work with different object types through a shared interface.",
+    "syntax": "class A:\n    def show(self):\n        ...",
+    "subconcepts": [
+     [
+      "Common interface",
+      "Different classes can expose the same method name."
+     ],
+     [
+      "Different behavior",
+      "Each class can implement the method differently."
+     ],
+     [
+      "Flexible code",
+      "Common method calls reduce type-specific branching."
+     ]
+    ],
+    "practice": "Create two classes with the same method name and different results.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20Polymorphism%20tutorial",
+    "example": [
+     "Shared method name",
+     "class Dog:\n    def sound(self):\n        print(\"Bark\")\n\nclass Cat:\n    def sound(self):\n        print(\"Meow\")\n\nfor animal in (Dog(), Cat()):\n    animal.sound()",
+     "Bark\nMeow"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 507,
+    "title": "Method Overriding",
+    "matter": "Method overriding occurs when a subclass defines a method with the same name as a parent method. The child implementation is used for child objects, and super() can be used when parent behavior is also needed.",
+    "syntax": "class Child(Parent):\n    def show(self):\n        statement",
+    "subconcepts": [
+     [
+      "Inherited method",
+      "Child classes can use parent behavior."
+     ],
+     [
+      "Overridden method",
+      "A child can replace a parent method."
+     ],
+     [
+      "super()",
+      "Can access parent behavior when needed."
+     ]
+    ],
+    "practice": "Create a parent and child class where the child overrides one method.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20Method%20Overriding%20tutorial",
+    "example": [
+     "Specialized behavior",
+     "class Vehicle:\n    def move(self): print(\"Vehicle moves\")\nclass Car(Vehicle):\n    def move(self): print(\"Car drives\")\nCar().move()",
+     "Car drives"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   }
+  ],
+  "video_id": "rfscVS0vtbw",
+  "video_title": "Module 5 video lesson"
+ },
+ {
+  "id": 6,
+  "title": "Database Connectivity",
+  "description": "Connect Python with SQLite, create tables, insert data and perform CRUD operations.",
+  "topics": [
+   {
+    "id": 601,
+    "title": "SQLite Connection",
+    "matter": "SQLite is a lightweight relational database that stores data in a local file. Python includes the sqlite3 module, so a separate database server is not required for basic projects. A connection object lets the program execute SQL statements and manage transactions.",
+    "syntax": "connection = sqlite3.connect(\"database.db\")",
+    "subconcepts": [
+     [
+      "Connection",
+      "Opens a connection to the SQLite database file."
+     ],
+     [
+      "Cursor",
+      "Executes SQL statements and retrieves results."
+     ],
+     [
+      "Commit",
+      "Saves changes made by INSERT, UPDATE or DELETE."
+     ]
+    ],
+    "practice": "Create a SQLite database connection and close it correctly.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20SQLite%20Connection%20tutorial",
+    "example": [
+     "Create connection",
+     "import sqlite3\nconn = sqlite3.connect(\"school.db\")\nprint(\"Connected\")\nconn.close()",
+     "Connected"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 602,
+    "title": "CRUD Operations",
+    "matter": "CRUD stands for Create, Read, Update and Delete. These operations form the basic workflow for managing records in a database-backed application. Python can execute parameterized SQL statements through sqlite3.",
+    "syntax": "cursor.execute(SQL, parameters)",
+    "subconcepts": [
+     [
+      "INSERT",
+      "Adds a new record."
+     ],
+     [
+      "SELECT",
+      "Retrieves records."
+     ],
+     [
+      "UPDATE and DELETE",
+      "Modify or remove existing records."
+     ]
+    ],
+    "practice": "Create an items table and insert three records.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20CRUD%20Operations%20tutorial",
+    "example": [
+     "Create, insert and read",
+     "import sqlite3\n\nconn = sqlite3.connect(\":memory:\")\ncur = conn.cursor()\ncur.execute(\"CREATE TABLE items(name TEXT)\")\ncur.execute(\"INSERT INTO items(name) VALUES (?)\", (\"Pen\",))\nconn.commit()\n\ncur.execute(\"SELECT name FROM items\")\nprint(cur.fetchall())\nconn.close()",
+     "[('Pen',)]"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 603,
+    "title": "Parameterized Queries",
+    "matter": "Parameterized queries separate SQL instructions from user-provided values. They improve correctness and help protect applications from SQL injection because values are passed separately from the SQL statement.",
+    "syntax": "cursor.execute(\"SELECT * FROM users WHERE name = ?\", (name,))",
+    "subconcepts": [
+     [
+      "Placeholders",
+      "Represent values supplied separately."
+     ],
+     [
+      "Parameters",
+      "Passed as a separate sequence or tuple."
+     ],
+     [
+      "Safety",
+      "User values are treated as data instead of SQL code."
+     ]
+    ],
+    "practice": "Write a parameterized query that searches by student name.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20Parameterized%20Queries%20tutorial",
+    "example": [
+     "Safe lookup query",
+     "import sqlite3\n\nconn = sqlite3.connect(\":memory:\")\ncur = conn.cursor()\ncur.execute(\"CREATE TABLE users(user_id INTEGER, name TEXT)\")\ncur.execute(\"INSERT INTO users VALUES (?, ?)\", (7, \"Ravi\"))\n\ncur.execute(\"SELECT name FROM users WHERE user_id = ?\", (7,))\nprint(cur.fetchone())\nconn.close()",
+     "('Ravi',)"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 604,
+    "title": "Transactions and Commit",
+    "matter": "A transaction groups database changes into a unit of work. commit() saves successful changes, while rollback() can undo uncommitted changes after an error. Transactions help keep related operations consistent.",
+    "syntax": "connection.commit()\nconnection.rollback()",
+    "subconcepts": [
+     [
+      "commit()",
+      "Saves pending changes."
+     ],
+     [
+      "rollback()",
+      "Cancels uncommitted changes."
+     ],
+     [
+      "Consistency",
+      "Related operations can be handled as one unit."
+     ]
+    ],
+    "practice": "Insert a record and commit it, then test rollback with another change.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20Transactions%20and%20Commit%20tutorial",
+    "example": [
+     "Commit and rollback",
+     "import sqlite3\n\nconn = sqlite3.connect(\":memory:\")\nconn.execute(\"CREATE TABLE student(name TEXT)\")\nconn.execute(\"INSERT INTO student VALUES (?)\", (\"Asha\",))\nconn.commit()\n\nconn.execute(\"INSERT INTO student VALUES (?)\", (\"Temp\",))\nconn.rollback()\n\nprint(conn.execute(\"SELECT COUNT(*) FROM student\").fetchone()[0])\nconn.close()",
+     "1"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 605,
+    "title": "Database Constraints",
+    "matter": "Constraints are rules enforced by a database to keep stored data valid. Primary keys identify rows, NOT NULL requires values, UNIQUE prevents duplicates, and foreign keys maintain relationships between tables.",
+    "syntax": "CREATE TABLE student(id INTEGER PRIMARY KEY, email TEXT UNIQUE NOT NULL)",
+    "subconcepts": [
+     [
+      "PRIMARY KEY",
+      "Uniquely identifies a row."
+     ],
+     [
+      "NOT NULL",
+      "Requires a value."
+     ],
+     [
+      "UNIQUE",
+      "Prevents duplicate values."
+     ],
+     [
+      "FOREIGN KEY",
+      "Connects related tables."
+     ]
+    ],
+    "practice": "Create a table with primary key and NOT NULL constraints.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20Database%20Constraints%20tutorial",
+    "example": [
+     "UNIQUE constraint blocks duplicates",
+     "import sqlite3\n\nconn = sqlite3.connect(\":memory:\")\nconn.execute(\"CREATE TABLE users(id INTEGER PRIMARY KEY, email TEXT UNIQUE NOT NULL)\")\nconn.execute(\"INSERT INTO users(email) VALUES (?)\", (\"a@example.com\",))\ntry:\n    conn.execute(\"INSERT INTO users(email) VALUES (?)\", (\"a@example.com\",))\nexcept sqlite3.IntegrityError:\n    print(\"Duplicate emails are blocked\")\nconn.close()",
+     "Duplicate emails are blocked"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 606,
+    "title": "Parameterized CRUD Workflow",
+    "matter": "CRUD means Create, Read, Update and Delete. A complete SQLite workflow should use parameterized SQL, commit successful writes and verify records before updating or deleting them.",
+    "syntax": "INSERT → SELECT → UPDATE → DELETE",
+    "subconcepts": [
+     [
+      "Create",
+      "INSERT adds rows."
+     ],
+     [
+      "Read",
+      "SELECT retrieves rows."
+     ],
+     [
+      "Update",
+      "UPDATE changes rows."
+     ],
+     [
+      "Delete",
+      "DELETE removes rows."
+     ]
+    ],
+    "practice": "Build a student-record workflow that performs all four CRUD operations.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20Parameterized%20CRUD%20Workflow%20tutorial",
+    "example": [
+     "Insert, read, update, delete",
+     "import sqlite3\n\nconn = sqlite3.connect(\":memory:\")\ncur = conn.cursor()\ncur.execute(\"CREATE TABLE student(id INTEGER PRIMARY KEY, name TEXT)\")\ncur.execute(\"INSERT INTO student(name) VALUES (?)\", (\"Asha\",))\ncur.execute(\"UPDATE student SET name=? WHERE id=?\", (\"Riya\", 1))\ncur.execute(\"SELECT name FROM student WHERE id=?\", (1,))\nprint(cur.fetchone()[0])\ncur.execute(\"DELETE FROM student WHERE id=?\", (1,))\nprint(cur.execute(\"SELECT COUNT(*) FROM student\").fetchone()[0])\nconn.close()",
+     "Riya\n0"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   }
+  ],
+  "video_id": "byHcYRpMgI4",
+  "video_title": "Module 6 video lesson"
+ },
+ {
+  "id": 7,
+  "title": "API Integration, Automation and Reporting",
+  "description": "Use APIs, automate repetitive work and create simple reports from program data.",
+  "topics": [
+   {
+    "id": 701,
+    "title": "Working with APIs",
+    "matter": "An API allows one software system to communicate with another using defined requests and responses. Python can send HTTP requests to public services and process JSON data. Learners should understand endpoints, parameters, status codes and response data before building API-based applications.",
+    "syntax": "response = requests.get(\"URL\")",
+    "subconcepts": [
+     [
+      "Endpoint",
+      "An endpoint is a URL provided by an API for a particular resource or operation."
+     ],
+     [
+      "JSON",
+      "JSON is a common format for exchanging structured data."
+     ],
+     [
+      "Status code",
+      "HTTP status codes indicate whether a request succeeded or failed."
+     ]
+    ],
+    "practice": "Call a public test API and print one field from its JSON response.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20Working%20with%20APIs%20tutorial",
+    "example": [
+     "Reading a JSON-style API response",
+     "import json\n\nresponse_text = '{\"name\": \"Alex\", \"score\": 90}'\ndata = json.loads(response_text)\nprint(data[\"score\"])",
+     "90"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 702,
+    "title": "Automation",
+    "matter": "Automation uses programs to perform repetitive tasks consistently. Python can automate file processing, data transformation, scheduled tasks and other routine workflows. Good automation scripts validate inputs and report errors clearly.",
+    "syntax": "for item in items:\n    perform_task(item)",
+    "subconcepts": [
+     [
+      "Repetition",
+      "Loops allow the same operation to be applied to many items."
+     ],
+     [
+      "File automation",
+      "Programs can organize or process files with suitable safeguards."
+     ],
+     [
+      "Validation",
+      "Automation should verify inputs and expected conditions before making changes."
+     ]
+    ],
+    "practice": "Process a list of five numbers automatically and print their squares.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20Automation%20tutorial",
+    "example": [
+     "Rename planning",
+     "files = [\"a.txt\", \"b.txt\"]\nfor name in files:\n    print(\"Processing:\", name)",
+     "Processing: a.txt\nProcessing: b.txt"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 703,
+    "title": "Reporting",
+    "matter": "Reporting converts processed information into a format that is easier to understand and share. Python can calculate totals, averages and summaries and then write results to text, CSV or other formats. Clear labels and consistent formatting make reports useful.",
+    "syntax": "with open(\"report.txt\", \"w\") as file:\n    file.write(report)",
+    "subconcepts": [
+     [
+      "Summary",
+      "Combine raw values into useful totals, counts or averages."
+     ],
+     [
+      "Formatting",
+      "Use clear labels and consistent structure in reports."
+     ],
+     [
+      "Export",
+      "Save report content to a suitable file format."
+     ]
+    ],
+    "practice": "Create a small report showing the count and average of five numbers.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20Reporting%20tutorial",
+    "example": [
+     "Average report",
+     "scores = [70, 80, 90]\navg = sum(scores) / len(scores)\nprint(\"Average:\", avg)",
+     "Average: 80.0"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 704,
+    "title": "JSON Data",
+    "matter": "JSON is a lightweight text format commonly used for API responses and configuration. Python can convert JSON text into dictionaries and lists with the json module, making structured web data easier to process.",
+    "syntax": "import json\ndata = json.loads(text)",
+    "subconcepts": [
+     [
+      "Objects",
+      "JSON objects commonly become Python dictionaries."
+     ],
+     [
+      "Arrays",
+      "JSON arrays commonly become Python lists."
+     ],
+     [
+      "Parsing",
+      "json.loads() converts JSON text into Python data."
+     ]
+    ],
+    "practice": "Parse a small JSON string and print one value.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20JSON%20Data%20tutorial",
+    "example": [
+     "Parsing JSON text",
+     "import json\n\ntext = '{\"name\": \"Asha\"}'\ndata = json.loads(text)\nprint(data[\"name\"])",
+     "Asha"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 705,
+    "title": "HTTP Requests with Python",
+    "matter": "Python programs can communicate with web services over HTTP. The requests library provides a simple interface for GET and other request methods. Applications should use timeouts and check response status before processing data.",
+    "syntax": "requests.get(url, timeout=10)",
+    "subconcepts": [
+     [
+      "GET",
+      "Requests data from a server."
+     ],
+     [
+      "Status code",
+      "Indicates whether a request succeeded or failed."
+     ],
+     [
+      "Timeout",
+      "Prevents waiting indefinitely."
+     ]
+    ],
+    "practice": "Write a GET request with a timeout and display the status code.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20HTTP%20Requests%20with%20Python%20tutorial",
+    "example": [
+     "GET request with a timeout",
+     "import requests\n\nresponse = requests.get(\"https://example.com\", timeout=10)\nprint(response.status_code)",
+     "200"
+    ],
+    "example_stdin": "",
+    "run_note": "Needs internet and the 'requests' library, so it cannot run inside the Practice Lab. Run it on your own computer."
+   },
+   {
+    "id": 706,
+    "title": "API Error Handling",
+    "matter": "API calls can fail because of network problems, invalid URLs or server-side errors. Reliable programs catch request exceptions, verify status codes and show useful fallback messages instead of assuming every response is valid.",
+    "syntax": "try:\n    response = requests.get(url, timeout=10)\n    response.raise_for_status()\nexcept requests.RequestException:\n    statement",
+    "subconcepts": [
+     [
+      "RequestException",
+      "Base exception for many requests-related failures."
+     ],
+     [
+      "raise_for_status()",
+      "Raises for unsuccessful HTTP responses."
+     ],
+     [
+      "Fallback",
+      "Provides useful behavior when a request fails."
+     ]
+    ],
+    "practice": "Add exception handling around an HTTP request.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20API%20Error%20Handling%20tutorial",
+    "example": [
+     "Handling a failed request",
+     "import requests\n\ntry:\n    response = requests.get(\"https://example.com\", timeout=5)\n    response.raise_for_status()\n    print(\"Request successful\")\nexcept requests.RequestException:\n    print(\"Request failed\")",
+     "Request successful"
+    ],
+    "example_stdin": "",
+    "run_note": "Needs internet and the 'requests' library, so it cannot run inside the Practice Lab. Run it on your own computer."
+   },
+   {
+    "id": 707,
+    "title": "CSV Reporting",
+    "matter": "CSV stores tabular information as rows and columns. Python’s csv module can create reports that are easy to open in spreadsheet applications or process with other programs.",
+    "syntax": "import csv\nwriter = csv.writer(file)",
+    "subconcepts": [
+     [
+      "Header row",
+      "Describes the report fields."
+     ],
+     [
+      "Rows",
+      "Contain individual records."
+     ],
+     [
+      "csv.writer",
+      "Writes Python sequences as CSV records."
+     ]
+    ],
+    "practice": "Generate a two-column CSV report containing names and scores.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20CSV%20Reporting%20tutorial",
+    "example": [
+     "Write and read a CSV report",
+     "import csv\n\nwith open(\"report.csv\", \"w\", newline=\"\") as file:\n    writer = csv.writer(file)\n    writer.writerow([\"Name\", \"Score\"])\n    writer.writerow([\"Asha\", 90])\n\nwith open(\"report.csv\", \"r\", newline=\"\") as file:\n    for row in csv.reader(file):\n        print(row)",
+     "['Name', 'Score']\n['Asha', '90']"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   },
+   {
+    "id": 708,
+    "title": "Scheduled Automation Concepts",
+    "matter": "Automation combines repeatable Python logic with a trigger such as an operating-system scheduler. Good automation scripts validate inputs, handle errors and produce useful logs or reports so that repeated work is reliable.",
+    "syntax": "def task():\n    statement",
+    "subconcepts": [
+     [
+      "Task function",
+      "Keeps repeated work reusable."
+     ],
+     [
+      "Scheduling",
+      "An external scheduler determines when a task runs."
+     ],
+     [
+      "Logging",
+      "Records what an automated task did."
+     ]
+    ],
+    "practice": "Design a small function that could be scheduled to generate a daily report.",
+    "video_search_url": "https://www.youtube.com/results?search_query=Python%20Scheduled%20Automation%20Concepts%20tutorial",
+    "example": [
+     "Reusable task function",
+     "def create_report():\n    print(\"Report generated\")\n\ncreate_report()",
+     "Report generated"
+    ],
+    "example_stdin": "",
+    "run_note": ""
+   }
+  ],
+  "video_id": "s8XjEuplx_U",
+  "video_title": "Module 7 video lesson"
+ }
+]

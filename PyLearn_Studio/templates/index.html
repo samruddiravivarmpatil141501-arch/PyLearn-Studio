@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}PyLearn Studio{% endblock %}
+{% block heading %}Build your Python skills{% endblock %}
+{% block content %}
+<section class="hero-card">
+  <div>
+    <span class="pill">MARWADI UNIVERSITY • ACADEMIC PROJECT</span>
+    <h2>Learn Python through <span>content, code & practice.</span></h2>
+    <p>PyLearn Studio combines structured lessons, module video lessons, practical examples, quizzes, progress tracking and a browser-based Practice Lab in one dark developer-style learning environment.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="{{ url_for('register') }}">Start Learning →</a>
+      <a class="btn ghost" href="{{ url_for('login') }}">I already have an account</a>
+    </div>
+  </div>
+  <div class="hero-code">
+    <div class="code-bar"><i></i><i></i><i></i><span>first_program.py</span></div>
+    <pre><code>print("Hello, Python!")
+print("Learn. Practice. Build.")</code></pre>
+    <div class="terminal-output">▶ Output<br><strong>Hello, Python!</strong><br><strong>Learn. Practice. Build.</strong></div>
+  </div>
+</section>
+<section class="feature-grid">
+  <div class="feature"><b>01</b><h3>7 structured modules</h3><p>From Python fundamentals to APIs, automation and reporting.</p></div>
+  <div class="feature"><b>02</b><h3>Practice Lab</h3><p>Write, run and save beginner Python programs locally.</p></div>
+  <div class="feature"><b>03</b><h3>Progress + Certificate</h3><p>Track topic completion and unlock the course certificate.</p></div>
+</section>
+{% endblock %}

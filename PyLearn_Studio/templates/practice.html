@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block title %}Practice Lab • PyLearn Studio{% endblock %}
+{% block heading %}Practice Lab{% endblock %}
+{% block content %}
+<div class="lab-grid">
+  <section class="panel editor-panel">
+    <div class="editor-head"><div><span class="pill">PYTHON EDITOR</span><h2>{% if topic %}{{ topic.title }}{% else %}Free Practice{% endif %}</h2></div><span class="editor-status">LOCAL RUNNER</span></div>
+    <textarea id="code" spellcheck="false">{% if saved_code %}{{ saved_code }}{% elif topic %}# Practice: {{ topic.title }}
+# Write your own solution below.
+
+{% endif %}</textarea>
+    <label class="stdin-label" for="stdin">PROGRAM INPUT <small>(for input(): one value per line)</small></label>
+    <textarea id="stdin" class="stdin-box" spellcheck="false" placeholder="Example:&#10;Asha&#10;21"></textarea>
+    <div class="editor-actions">
+      <button class="btn primary" id="runBtn">▶ Run Code</button>
+      <button class="btn secondary" id="saveBtn">💾 Save Code</button>
+      {% if topic and topic.example %}<button class="btn ghost" id="exampleBtn" type="button">Load lesson example</button>{% endif %}
+      <button class="btn ghost" id="clearBtn">Clear</button>
+    </div>
+    <div class="output-box"><div class="output-title">OUTPUT</div><pre id="output">Run your program to see the output here.</pre></div>
+    <p class="security-note">Practice Lab is designed for local academic use. Only a few safe modules (math, random, datetime, string, collections, itertools, json, csv, sqlite3, statistics) can be imported; sqlite3 works with &quot;:memory:&quot; or a plain file name, files must use plain names, and execution has a 4-second time limit.</p>
+  </section>
+  <aside class="panel lab-side">
+    <h3>How to practice</h3>
+    <ol>
+      <li>Read the topic.</li><li>Write your own code.</li><li>Run it and inspect the output.</li><li>Fix errors and try again.</li><li>Save useful solutions (your last saved code reopens here).</li>
+    </ol>
+    {% if topic %}<a class="btn secondary full" href="{{ url_for('module_view', module_id=module.id, topic=topic.id) }}">← Back to Topic</a>{% endif %}
+  </aside>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+const topicId = {{ topic.id if topic else 'null' }};
+const CSRF = document.querySelector('meta[name="csrf-token"]').content;
+const lessonExample = {{ ({"code": topic.example[1], "stdin": topic.example_stdin} if topic and topic.example else None)|tojson }};
+const code = document.getElementById("code");
+const output = document.getElementById("output");
+document.getElementById("runBtn").onclick = async () => {
+  output.textContent = "Running...";
+  try {
+    const res = await fetch("{{ url_for('api_run') }}", {
+      method:"POST", headers:{"Content-Type":"application/json","X-CSRF-Token":CSRF},
+      body:JSON.stringify({code:code.value, stdin:document.getElementById("stdin").value})
+    });
+    const data = await res.json();
+    output.textContent = data.output || "No output";
+  } catch (err) {
+    output.textContent = "Could not reach the server. Is the app still running?";
+  }
+};
+document.getElementById("saveBtn").onclick = async () => {
+  if (!topicId) { output.textContent = "Open Practice Lab from a topic to save code."; return; }
+  try {
+    const res = await fetch("{{ url_for('save_code') }}", {
+      method:"POST", headers:{"Content-Type":"application/json","X-CSRF-Token":CSRF},
+      body:JSON.stringify({code:code.value, topic_id:topicId})
+    });
+    const data = await res.json();
+    output.textContent = data.message || "Saved.";
+  } catch (err) {
+    output.textContent = "Could not save. Is the app still running?";
+  }
+};
+function loadExample() {
+  if (!lessonExample) return;
+  code.value = lessonExample.code;
+  document.getElementById("stdin").value = lessonExample.stdin || "";
+  output.textContent = "Lesson example loaded. Press Run Code.";
+}
+const exBtn = document.getElementById("exampleBtn");
+if (exBtn) exBtn.onclick = loadExample;
+{% if request.args.get('example') %}loadExample();{% endif %}
+document.getElementById("clearBtn").onclick = () => { code.value = ""; output.textContent = "Editor cleared."; };
+</script>
+{% endblock %}
